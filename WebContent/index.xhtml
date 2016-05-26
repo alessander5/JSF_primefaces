@@ -18,7 +18,7 @@
 
     <h:body>
         <h:form>
-            <p:panel header="Raex document Upload" style="margin-bottom:20px">
+            <p:panel header="Raex document Upload">
 
                 <p:panelGrid columns="2" layout="grid" >
                     <p:outputLabel for="type" value="Document Type* :" />
@@ -32,19 +32,44 @@
 
                 <br/>
 
-                <p:dataTable value="#{mobyBean.mobys}" var="moby" >
+                <p:panel  style="background-color: lightgray">
+                    <h:outputText value="Third Party" style="margin-bottom: 20px"/>
 
-                    <p:column>
-                        <h:outputText value="#{moby.name}" />
-                    </p:column>
+                    <p:dataTable value="#{mobyBean.mobys}" var="moby" >
 
-                    <p:column>
-                        <h:outputText value="#{moby.description}" />
-                    </p:column>
+                        <p:column>
+                            <h:outputText value="#{moby.name}" />
+                        </p:column>
 
-                </p:dataTable>
+                        <p:column>
+                            <h:outputText value="#{moby.description}" />
+                        </p:column>
+
+                    </p:dataTable>
+                </p:panel>
 
                 <br/><br/>
+
+                <p:toolbar>
+                    <f:facet name="left">
+
+
+                        <p:commandButton type="button" value="Choose" icon="ui-icon-plusthick" />
+
+                        <p:commandButton type="button" value="Upload" icon="ui-icon-arrowreturnthick-1-n" />
+
+                        <p:commandButton type="button" value="Cancel" icon="ui-icon-cancel" />
+                    </f:facet>
+                </p:toolbar>
+
+                <br/><br/>
+
+                <p:panel>
+                    <h:panelGrid columns="2" cellpadding="10">
+                        <h:outputText  value="Notes:" />
+                        <p:inputTextarea rows="3" style="width: auto"/>
+                    </h:panelGrid>
+                </p:panel>
 
                 <br/><br/>
 
@@ -82,7 +107,12 @@
 
                 <br/><br/>
 
-
+                <p:panel style="float: right; border-color: white">
+                    <p:button value="Cancel" style="background-color: red" />
+                    <p:button value="Delete"/>
+                    <p:button value="Change Log"/>
+                    <p:button value="Edit"/>
+                </p:panel>
 
             </p:panel>
         </h:form>

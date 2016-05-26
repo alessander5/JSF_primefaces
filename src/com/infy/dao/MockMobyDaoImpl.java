@@ -1,8 +1,6 @@
 package com.infy.dao;
 
-import com.infy.domein.FileInfo;
 import com.infy.domein.Mobility;
-import com.infy.util.MyDate;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -19,9 +17,9 @@ public class MockMobyDaoImpl implements IMobyDao {
         mockModel.add(new Mobility("CANBM", "Bell Mobility"));
         mockModel.add(new Mobility("CANDM", "Bell Mobility"));
         mockModel.add(new Mobility("CANBM1", "Bell Mobility"));
-        mockModel.add(new Mobility("CANDM1", "Bell Mobility"));
+        /*mockModel.add(new Mobility("CANDM1", "Bell Mobility"));
         mockModel.add(new Mobility("CANBM2", "Bell Mobility"));
-        mockModel.add(new Mobility("CANDM2", "Bell Mobility"));
+        mockModel.add(new Mobility("CANDM2", "Bell Mobility"));*/
 
     }
 
