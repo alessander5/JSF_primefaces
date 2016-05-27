@@ -1,7 +1,7 @@
 package com.infy.beans;
 
-import com.infy.domain.FileInfo;
-import com.infy.service.IFileInfoService;
+import com.infy.domain.TopTable;
+import com.infy.service.ITopTableService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -11,17 +11,19 @@ import java.io.Serializable;
 import java.util.Collection;
 
 /**
- * Created by Infy on 23.05.2016.
+ * Created by Infy on 26.05.2016.
  */
-@ManagedBean(name = "filesBean")
+
+@ManagedBean(name = "topTableBean")
 @SessionScoped
 @Component
-public class FilesBean implements Serializable{
-    @Autowired
-    private IFileInfoService fileService;
+public class TopTableBean implements Serializable{
 
-    public Collection<FileInfo> getFilesInfo() {
-        return fileService.getList();
+    @Autowired
+    private ITopTableService topTableService;
+
+    public Collection<TopTable> getItems() {
+        return topTableService.getList();
     }
 
 }

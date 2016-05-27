@@ -1,10 +1,9 @@
 package com.infy.dao;
 
-import com.infy.domein.FileInfo;
+import com.infy.domain.FileInfo;
 import com.infy.util.MyDate;
 
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 /**

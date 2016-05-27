@@ -1,4 +1,4 @@
-package com.infy.domein;
+package com.infy.domain;
 
 import com.infy.util.MyDate;
 

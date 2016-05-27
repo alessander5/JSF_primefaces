@@ -1,6 +1,6 @@
 package com.infy.service;
 
-import com.infy.domein.FileInfo;
+import com.infy.domain.FileInfo;
 
 import java.util.List;
 

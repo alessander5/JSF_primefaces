@@ -1,10 +1,10 @@
-package com.infy.domein;
+package com.infy.domain;
 
 /**
  * Created by Infy on 23.05.2016.
  */
 
-public class Mobility {
+public class TopTable {
 
     private int id;
 
@@ -12,10 +12,10 @@ public class Mobility {
 
     private String description;
 
-    public Mobility() {
+    public TopTable() {
     }
 
-    public Mobility(String name, String description) {
+    public TopTable(String name, String description) {
         this.name = name;
         this.description = description;
     }

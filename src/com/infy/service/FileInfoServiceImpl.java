@@ -1,8 +1,8 @@
 package com.infy.service;
 
 import com.infy.dao.IFileInfoDao;
-import com.infy.dao.MockFileInfoDaoImpl;
-import com.infy.domein.FileInfo;
+import com.infy.domain.FileInfo;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 
@@ -11,7 +11,8 @@ import java.util.List;
  */
 public class FileInfoServiceImpl implements IFileInfoService{
 
-    private IFileInfoDao fileDao = new MockFileInfoDaoImpl();
+    @Autowired
+    private IFileInfoDao fileDao;
 
 
     public void save(FileInfo fi) {
