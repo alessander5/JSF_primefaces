@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core" xmlns:c="http://java.sun.com/jsp/jstl/core"
+      xmlns:p="http://primefaces.org/ui" >
+
+<f:view>
+    <h:head>
+        <title>JSF Title</title>
+    </h:head>
+
+    <h:head>
+        <h:outputStylesheet library="css" name="table-style.css"/>
+    </h:head>
+
+    <h:body>
+        <h:form>
+            <p:panel header="Raex document Upload">
+
+                <p:panelGrid columns="2" layout="grid" >
+                    <p:outputLabel for="type" value="Document Type* :" />
+                    <p:selectOneMenu id="type" style="width: 100%">
+                        <f:selectItem itemLabel="Select One" />
+                        <f:selectItem itemLabel="Type 1"/>
+                        <f:selectItem itemLabel="Type 2"/>
+                        <f:selectItem itemLabel="Type 3"/>
+                    </p:selectOneMenu>
+                </p:panelGrid>
+
+                <br/>
+
+                <p:panel  style="background-color: lightgray">
+                    <h:outputText value="Third Party" style="margin-bottom: 20px"/>
+
+                    <p:dataTable value="#{topTableBean.items}" var="moby" >
+
+                        <p:column>
+                            <h:outputText value="#{moby.name}" />
+                        </p:column>
+
+                        <p:column>
+                            <h:outputText value="#{moby.description}" />
+                        </p:column>
+
+                    </p:dataTable>
+                </p:panel>
+
+                <br/><br/>
+
+                <p:toolbar>
+                    <f:facet name="left">
+
+
+                        <p:commandButton type="button" value="Choose" icon="ui-icon-plusthick" />
+
+                        <p:commandButton type="button" value="Upload" icon="ui-icon-arrowreturnthick-1-n" />
+
+                        <p:commandButton type="button" value="Cancel" icon="ui-icon-cancel" />
+                    </f:facet>
+                </p:toolbar>
+
+                <br/><br/>
+
+                <p:panel>
+                    <h:panelGrid columns="2" cellpadding="10">
+                        <h:outputText  value="Notes:" />
+                        <p:inputTextarea rows="3" style="width: auto"/>
+                    </h:panelGrid>
+                </p:panel>
+
+                <br/><br/>
+
+                <p:dataTable value="#{filesBean.filesInfo}" var="file"
+                             styleClass="order-table"
+                             headerClass="order-table-header"
+                             rowClasses="order-table-odd-row,order-table-even-row"
+                        >
+
+                    <p:column headerText="ID">
+                        <h:outputText value="#{file.id}" />
+                    </p:column>
+
+                    <p:column headerText="TYPE">
+                        <h:outputText value=" #{file.type}" />
+                    </p:column>
+
+                    <p:column headerText="TADIG">
+                        <h:outputText value=" #{file.tadig}" />
+                    </p:column>
+
+                    <p:column headerText="File Name">
+                        <h:outputText value=" #{file.file_name}" />
+                    </p:column>
+
+                    <p:column headerText="Created On">
+                        <h:outputText value=" #{file.created_on}" />
+                    </p:column>
+
+                    <p:column headerText="Updated By">
+                        <h:outputText value=" #{file.updated_by}" />
+                    </p:column>
+
+                </p:dataTable>
+
+                <br/><br/>
+
+                <p:panel style="float: right; border-color: white">
+                    <p:button value="Cancel" style="background-color: red" />
+                    <p:button value="Delete"/>
+                    <p:button value="Change Log"/>
+                    <p:button value="Edit"/>
+                </p:panel>
+
+            </p:panel>
+        </h:form>
+
+    </h:body>
+</f:view>
+
+</html>
